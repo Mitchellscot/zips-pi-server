@@ -1,0 +1,17 @@
+{
+  "name": "zipline-image-photo-system",
+  "version": "1.0.0",
+  "description": "Takes photos with a raspberry pi and then displays them on a browser for guests to purchase",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mitchell Scott",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.849.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  }
+}
