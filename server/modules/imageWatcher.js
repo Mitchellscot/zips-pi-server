@@ -21,7 +21,8 @@ function imageWatcher() {
             }
             var putObjectPromise = s3.upload(params).promise();
             putObjectPromise.then(function(data) {
-                console.log('Success', data.Location);
+                let imageUrl = data.Locationl
+                console.log('Success', imageUrl);
                 fs.unlink(`/home/mitch/Pictures/motion/${filename}`, (err) => {
                     if (err) throw err;
                 })
