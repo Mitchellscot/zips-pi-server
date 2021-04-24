@@ -36,8 +36,6 @@ function imageWatcher() {
                 ACL: 'public-read'
             }
 
-            //this part is still being sorted
-
             s3.upload(params, async (error, data) => {
                 try {
                     if (error) {
@@ -49,7 +47,7 @@ function imageWatcher() {
 
                         if (imageUrl !== url) {
                             imageUrl = url;
-                            await axios.post("http://192.168.0.78:5000/api/image", {
+                            await axios.post("http://192.168.0.3:5000/api/image", {
                                 url: data.Location
                             }).then((response) => {
                                 console.log(`response from the post: ${response.data}`);
