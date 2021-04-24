@@ -35,7 +35,7 @@ function imageWatcher() {
                 ContentType: "image/jpeg",
                 ACL: 'public-read'
             }
-
+            //upload file
             s3.upload(params, async (error, data) => {
                 try {
                     if (error) {
@@ -44,7 +44,7 @@ function imageWatcher() {
                     else {
                         console.log(data.Location);
                         let url = data.Location;
-
+            //post to the database when callbacks are done
                         if (imageUrl !== url) {
                             imageUrl = url;
                             await axios.post("http://192.168.0.3:5000/api/image", {
