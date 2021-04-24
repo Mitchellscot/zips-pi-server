@@ -23,4 +23,4 @@ A Raspberry Pi HQ Camera, Raspberry Pi computer
 5. optionally you can run a chron job to delete photos on the pi every hour or so
 
 ## Support
-If you have suggestions or issues, please email me at [youremail@whatever.com](www.google.com)
+If you have suggestions or issues, please email me at mitchellscott@me.com
