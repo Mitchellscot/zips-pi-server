@@ -44,10 +44,10 @@ function imageWatcher() {
                     else {
                         console.log(data.Location);
                         let url = data.Location;
-            //post to the database when callbacks are done
-                        if (imageUrl !== url) {
+                        //post to the database when callbacks are done
+                        if (imageUrl !== url && url.endsWith(".jpg")) {
                             imageUrl = url;
-                            await axios.post("http://192.168.0.3:5000/api/image", {
+                            await axios.post("http://192.168.1.46:5000/api/image", {
                                 url: data.Location
                             }).then((response) => {
                                 console.log(`response from the post: ${response.data}`);
