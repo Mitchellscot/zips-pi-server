@@ -36,8 +36,6 @@ function imageWatcher() {
                 ACL: 'public-read'
             }
 
-            //this part is still being sorted
-
             s3.upload(params, async (error, data) => {
                 try {
                     if (error) {

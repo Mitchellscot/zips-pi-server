@@ -5,7 +5,7 @@ const { exec } = require("child_process");
 router.get('/', (req, res) =>{
     var date = new Date();
     let filename = date.toISOString();
-    exec(`curl -s "http://localhost:8081/current" > /home/mitch/Pictures/motion/${filename}.jpg`, (error, stdout, stderr)=>{
+    exec(`raspistill -t 500  -o /home/mitch/Pictures/motion/${filename}.jpg`, (error, stdout, stderr)=>{
         if (error){
             console.log(`error: ${error.message}`);
             return
