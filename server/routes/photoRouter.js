@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const { exec } = require("child_process");
+const cors = require('cors');
 
-router.get('/', (req, res) =>{
+router.get('/', cors(), (req, res) =>{
     var date = new Date();
     let filename = date.toISOString();
-    exec(`raspistill -t 500  -o /home/mitch/Pictures/motion/${filename}.jpg`, (error, stdout, stderr)=>{
+    exec(`curl -s "http://localhost:8081/current" > /home/mitch/Pictures/motion/${filename}.jpg`, (error, stdout, stderr)=>{
         if (error){
             console.log(`error: ${error.message}`);
             return
