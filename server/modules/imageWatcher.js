@@ -47,7 +47,7 @@ function imageWatcher() {
                         //post to the database when callbacks are done
                         if (imageUrl !== url && url.endsWith(".jpg")) {
                             imageUrl = url;
-                            await axios.post("http://192.168.1.67:5000/api/image", {
+                            await axios.post("http://bzt-photos.herokuapp.com/api/image", {
                                 url: data.Location
                             }).then((response) => {
                                 console.log(`response from the post: ${response.data}`);

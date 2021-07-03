@@ -6,7 +6,7 @@ const cors = require('cors');
 router.get('/', cors(), (req, res) =>{
     var date = new Date();
     let filename = date.toISOString();
-    exec(`curl -s "http://localhost:8081/current" > /home/mitch/Pictures/motion/${filename}.jpg`, (error, stdout, stderr)=>{
+    exec(`raspistill -o /home/mitch/Pictures/motion/${filename}.jpg -w 2592 -h 1944 -ex antishake -t 1000 --ISO 100 -br 40`, (error, stdout, stderr)=>{
         if (error){
             console.log(`error: ${error.message}`);
             return
