@@ -3,13 +3,11 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 8082;
-const cors = require('cors');
-app.use(cors());
 const https = require('https');
 const fs = require('fs');
 
-var key = fs.readFileSync('/home/mitch/zips.key');
-var cert = fs.readFileSync('/home/mitch/zips.crt');
+var key = fs.readFileSync('/home/mitch/Code/privkey.pem');
+var cert = fs.readFileSync('/home/mitch/Code/fullchain.pem');
 var options = {
 	key: key,
 	cert: cert
